@@ -6,6 +6,8 @@ import android.util.Log
 import kotlin.math.log
 
 class MainActivity2 : AppCompatActivity() {
+
+    private val _tag = "main_activity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
