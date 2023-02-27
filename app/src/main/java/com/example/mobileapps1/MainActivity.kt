@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://github.com/saravanabalagi/dorset_mobileApps1")
+                data = Uri.parse("https://github.com/MatheusPzz/Mobile-apps-main.git")
             }
             startActivity(intent)
         }
