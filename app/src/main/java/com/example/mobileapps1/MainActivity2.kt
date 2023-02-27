@@ -1,30 +1,31 @@
 package com.example.mobileapps1
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toast
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity2 : AppCompatActivity(R.layout.activity_main2) {
+
+class MainActivity2 : AppCompatActivity() {
+
+    private val _tag = "main activity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val listView = findViewById<ListView>(R.id.listView)
-        val strArray = Array(10000) { "Something ${it * 10}" }
-        listView.adapter = ArrayAdapter(this, R.layout.list_view_template, strArray)
-        listView.setOnItemClickListener { parent, view, position, id ->
-            val textView = view.findViewById<TextView>(R.id.text_view)
-            Toast.makeText(this, "$position $id ${textView.text}", Toast.LENGTH_LONG).show()
-        }
-
-        val nextPageButton = findViewById<Button>(R.id.nextPageButton)
-        nextPageButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_main2)
     }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(_tag, "Hi There")
+        }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(_tag, "this activity has been resumed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e(_tag, "this activity has been destroyed")
+    }
+
 }
