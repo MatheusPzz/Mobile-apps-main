@@ -15,6 +15,8 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
@@ -46,13 +48,13 @@ class MainActivity : AppCompatActivity() {
             }
             sb.show()
 
-            if (savedInstanceState == null) {
-                supportFragmentManager.commit {
-                    val bundle = bundleOf("username" to "Inside fragment: $nameText")
-                    setReorderingAllowed(true)
-                    replace<SampleFragment>(R.id.fragment_container_view, args = bundle)
-                }
-            }
+//            if (savedInstanceState == null) {
+//                supportFragmentManager.commit {
+//                    val bundle = bundleOf("username" to "Inside fragment: $nameText")
+//                    setReorderingAllowed(true)
+//                    replace<SampleFragment>(R.id.fragment_container_view, args = bundle)
+//                }
+//            }
 
             Log.i("MainAct", "Text entered $nameText")
             if (nameText.toString() == "Hide") {
@@ -74,6 +76,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
+    }
+    val exampleViewPager = findViewById<ViewPager2>(R.id.exampleViewPager)
+    exampleViewPager.adapter = object: RecyclerView.Adapter<>() {
+
     }
 
     fun View.hideKeyboard() {
