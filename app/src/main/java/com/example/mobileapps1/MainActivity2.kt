@@ -25,5 +25,12 @@ class MainActivity2 : AppCompatActivity(R.layout.activity_main2) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        val changeDataButton = findViewById<Button>(R.id.changeDataButton)
+        changeDataButton.setOnClickListener {
+
+            contactArray[3].name = "Matheus"
+            recyclerView.adapter.notifyDataSetChanged()
+
+        }
     }
 }
