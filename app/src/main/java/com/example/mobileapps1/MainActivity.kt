@@ -46,14 +46,6 @@ class MainActivity : AppCompatActivity() {
             }
             sb.show()
 
-            if (savedInstanceState == null) {
-                supportFragmentManager.commit {
-                    val bundle = bundleOf("username" to "Inside fragment: $nameText")
-                    setReorderingAllowed(true)
-                    replace<SampleFragment>(R.id.fragment_container_view, args = bundle)
-                }
-            }
-
             Log.i("MainAct", "Text entered $nameText")
             if (nameText.toString() == "Hide") {
                 Log.i("MainAct", "Inside Hide if")
