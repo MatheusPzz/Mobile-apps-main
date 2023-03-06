@@ -2,7 +2,7 @@
 
 ## Week 1
 
- - Build a hello world android app
+ - Build a hello world android appS
  - Change text programmatically
  - Add string resource
 
